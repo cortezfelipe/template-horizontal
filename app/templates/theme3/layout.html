@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Adianti Template III</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="manifest" href="manifest.json?appver=722">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="apple-touch-icon" sizes="180x180" href="app/images/icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    
+    {LIBRARIES}
+    {HEAD}
+    
+    <script src="app/lib/include/admin-all.min.js?appver=722" type="text/javascript"></script>
+    
+    <link href="app/lib/include/admin.min.css?appver=722" rel="stylesheet" type="text/css" media="screen">
+    
+    <link href="app/templates/{template}/menu/css/bootstrap-4-navbar.css" rel="stylesheet">
+    
+    <link href="app/templates/{template}/css/AdminLTE.min.css" rel="stylesheet" type="text/css" media="screen">
+    
+    <link href="app/templates/{template}/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    
+
+    <script>
+    
+    </script>
+  </head>
+  
+  <body>
+      <!-- Static navbar -->
+      <nav class="navbar navbar-expand-md navbar-light fixed-top">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <img src="app/images/icon.png" alt="">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                
+                {MENU}
+
+          </div>
+      </nav>
+
+    <section class="content content-wrapper">
+      <div class="container-fluid">
+          <div id="adianti_div_content" style="padding: 4px;">
+          </div>
+      </div>
+      <div id="adianti_online_content"></div>
+      <div id="adianti_online_content2"></div>
+      
+      <div id="adianti_right_panel" class="right-panel"></div>
+  </section>
+  
+    
+  </body>
+
+  <script src="app/templates/{template}/menu/js/bootstrap-4-navbar.js"></script>
+  <script src="app/templates/{template}/js/app.min.js"></script>
+  <script src="app/templates/{template}/js/custom.js"></script>
+
+
+</html>
