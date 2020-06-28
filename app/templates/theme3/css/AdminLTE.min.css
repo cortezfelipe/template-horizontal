@@ -122,7 +122,7 @@ body.hold-transition .content-wrapper, body.hold-transition .right-side, body.ho
 
 .content {
     min-height: 250px;
-    padding-top: 60px;
+    padding-top: 90px;
     margin-right: auto;
     margin-left: auto;
     padding-left: 0px;
@@ -1085,7 +1085,8 @@ a:hover, a:active, a:focus {
 .navbar-nav>.user-menu>.dropdown-menu>li.user-header {
     height: 175px;
     padding: 10px;
-    text-align: center
+    text-align: center;
+    background: cornflowerblue;
 }
 
 .navbar-nav>.user-menu>.dropdown-menu>li.user-header>img {

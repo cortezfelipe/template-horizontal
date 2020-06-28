@@ -542,6 +542,7 @@ blockquote .small, blockquote footer, blockquote small {
 .navbar-custom-menu>ul.nav.navbar-nav>li.dropdown>a{
     display: block;
     padding: 15px;
+    color: black;
 }
 
 /** breadcrumb **/

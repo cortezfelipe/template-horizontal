@@ -29,23 +29,110 @@
     
 
     <script>
-    
+        function update_messages_menu() {
+            $.get('engine.php?class=MessageList&theme=theme3', function(data) {
+                $('#envelope_messages').html(data);
+            });
+        }
+        
+        function update_notifications_menu() {
+            $.get('engine.php?class=NotificationList&theme=theme3', function(data) {
+                $('#envelope_notifications').html(data);
+            });
+        }
+        
+        $(function() {
+            $.get('engine.php?class=SearchBox', function(data)
+            {
+              $('.navbar-custom-menu').append(data).show();
+              var search_box = $('.navbar-nav').nextAll('div');
+              search_box.css('padding-top', '10px');
+              search_box.css('padding-left', '25px');
+              search_box.css('display', 'table');
+              search_box.css('float', 'left');
+              search_box.attr('id', 'search-box');
+            });
+            
+            update_messages_menu();
+            update_notifications_menu();
+            
+            // setInterval( update_messages_menu, 5000);
+            // setInterval( update_notifications_menu, 5000);
+            
+            __adianti_set_language('{lang}');
+            __adianti_set_debug({debug});
+        });
     </script>
   </head>
   
-  <body>
+  <body class="hold-transition skin-blue">
       <!-- Static navbar -->
       <nav class="navbar navbar-expand-md navbar-light fixed-top">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <img src="app/images/icon.png" alt="">
+	  <img src="app/images/icon.png" alt="">
+	   
+		
+
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                
-                {MENU}
 
-          </div>
+     <!-- Menu Horizontal -->   
+	  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                
+       {MENU}
+	
+    </div>
+
+	<div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <!--{BUILDER-MENU}-->
+            
+              <li class="dropdown messages-menu" id="envelope_messages">
+                  <!-- /.dropdown-messages -->
+              </li>
+              
+              <li class="dropdown notifications-menu" id="envelope_notifications">
+                  <!-- /.dropdown-messages -->
+              </li>
+              
+              <li class="dropdown notifications-menu" id="support">
+                <a generator="adianti" href="index.php?class=SystemSupportForm">
+                    <i class="fa fa-life-ring fa-fw"></i>
+                </a>
+              </li>
+              
+              <!-- User Account: style can be found in dropdown.less -->
+              <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-user"></i>
+                  <span class="hidden-xs">{username}</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <!-- User image -->
+                  <li class="user-header" style="height:initial">
+                    <!-- <i class="fa fa-user fa-3x" style="color:white"></i> -->
+                    <img src="app/images/photos/{login}.jpg" onError="this.onerror=null;this.src='app/templates/{template}/img/avatar5.png';" style="border-radius:50%" alt="User" />
+                    <p>
+                      {username}<br>
+                      <a href="index.php?class=SystemProfileView" style="color:white;font-size:12px">[_t{Profile}]</a>
+                    </p>
+                  </li>
+                  <!-- Menu Body -->
+                  <!-- Menu Footer-->
+                  <li class="user-footer">
+                    <div class="pull-left">
+                      <a generator="adianti" href="index.php?class=LoginForm&method=reloadPermissions&static=1" class="btn btn-default btn-flat">_t{Reload}</a>
+                    </div>
+                    <div class="pull-right">
+                      <a generator="adianti" href="index.php?class=LoginForm&method=onLogout&static=1" class="btn btn-default btn-flat">_t{Exit}</a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>	
+		
+
       </nav>
 
     <section class="content content-wrapper">
